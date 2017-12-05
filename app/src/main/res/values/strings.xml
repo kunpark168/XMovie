@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">XMovie</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info">Star Trek là một bộ phim hành động thuộc thể loại khoa học viễn tưởng được sản xuất năm 2009 của điện ảnh Hoa Kỳ đạo diễn bởi J. J. Abrams, biên kịch Roberto Orci và Alex Kurtzman với nhà sản xuất là hãng Paramount Pictures. Đây là bộ phim thứ 11 trong loạt phim về Star Trek và đây cũng là phần phim tái khởi động khi kể câu chuyện về các nhân vật chính ở độ tuổi trẻ hơn như trong loạt phim truyền hình Star Trek: The Original tuy nhiên với sự diễn xuất của dàn diễn viên hoàn toàn mới. Bộ phim theo dấu James T. Kirk (Chris Pine) và Spock (Zachary Quinto) lên con tàu USS Enterprise, tại đây họ phải chống lại Nero (Eric Bana), một người Romulan đến từ tương lai của họ đang cố đe dọa sự toàn vẹn của United Federation of Planets (Liên hiệp các Hành tinh). </string>
+    <string name="title_activity_slide_menu">SlideMenuActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginRight="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="105dp"
+    android:layout_height="170dp">
+    <LinearLayout
+        android:background="@drawable/bg_poster"
+        android:padding="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <ImageView
+            android:id="@+id/imgActor"
+            android:scaleType="fitXY"
+            android:src="@drawable/actor1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <TextView
+        android:paddingTop="3dp"
+        android:id="@+id/txtActor"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"
+        android:text="Jacalne Borm"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+</LinearLayout>

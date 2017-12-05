@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">#01000000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="DialogPink" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#de1919</item>
+        <item name="android:textColorPrimary">#fd86d9</item>
+        <item name="android:background">#fff</item>
+    </style>
+
+    <style name="DialogBlue" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#0491b4</item>
+        <item name="android:textColorPrimary">#fd86d9</item>
+        <item name="android:background">#fff</item>
+    </style>
+
+    <style name="DialogGreen" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#059e05</item>
+        <item name="android:textColorPrimary">#fd86d9</item>
+        <item name="android:background">#fff</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

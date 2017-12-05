@@ -1,0 +1,773 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="app.group20.gtnm.xmovie.main.popular.PopularFragment">
+
+    //Movie list
+    <LinearLayout
+        android:background="@color/colorBlack"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="570dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="1dp"
+                    android:background="@drawable/bg_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/imgPosteri1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/posterp1"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="MEMORIES MURDER"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:gravity="right|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.0/10"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="1dp"
+                    android:background="@drawable/bg_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/imgPosteri2"
+                        android:src="@drawable/posterp2"
+                        android:scaleType="fitXY"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="ANTON YELCHIH"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:gravity="right|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="7.5/10"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="1dp"
+                    android:background="@drawable/bg_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/imgPosteri3"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/posterp3"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="STAY"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:gravity="right|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.3/10"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="1dp"
+                    android:background="@drawable/bg_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/imgPosteri4"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/posterp4"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="HOTBOY NỔI LOẠN"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:gravity="right|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="9.0/10"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="1dp"
+                    android:background="@drawable/bg_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/imgPosteri5"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/posterp5"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="GREEN LIGHTER"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:gravity="right|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.7/10"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="1dp"
+                    android:background="@drawable/bg_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/imgPosteri6"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/posterp6"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="GREEN ROOM"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:gravity="right|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="9.3/10"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="1dp"
+                    android:background="@drawable/bg_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/imgPosteri7"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/posterp7"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="JUSTICE LEAGUE"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:gravity="right|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="7.4/10"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="1dp"
+                    android:background="@drawable/bg_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/imgPosteri8"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/posterp8"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="THE FLY"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:gravity="right|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.1/10"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:padding="1dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:padding="1dp"
+                    android:background="@drawable/bg_poster"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/imgPosteri9"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/posterp9"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="3"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="FACING DARKNESS"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:gravity="right|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="9.8/10"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
