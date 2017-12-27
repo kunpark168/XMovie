@@ -1,435 +1,572 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
+<nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
-    android:theme="@style/AppTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/AppTheme"
+    app:contentScaleClosed="1"
+    app:contentScaleOpen="0.8"
     tools:context="app.group20.gtnm.xmovie.main.MainActivity"
     tools:openDrawer="start">
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#000">
-    <ScrollView
+    <nl.psdcompany.duonavigationdrawer.views.DuoMenuView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:tag="@string/tag_menu">
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            //SearchBox 1
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:weightSum="10"
+            android:orientation="vertical"
+            tools:context="app.group20.gtnm.xmovie.main.TestLideActivity">
+            //SearchBox 0.7
             <LinearLayout
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="44dp">
+                android:layout_weight="0.7"
+                android:layout_height="0dp">
                 <LinearLayout
                     android:weightSum="10"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:id="@+id/imgSildemenu"
-                        android:paddingTop="15dp"
-                        android:paddingBottom="5dp"
+                        android:id="@+id/imgBackSlideMenu"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/ic_menu"
+                        android:src="@drawable/ic_back_white"
                         android:layout_weight="0.55"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
-                    <FrameLayout
-                        android:id="@+id/layoutSearch"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="9.45"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent">
-                        <EditText
-                            android:id="@+id/edtSearchMain"
-                            android:focusable="false"
-                            android:textSize="15sp"
-                            android:gravity="center_vertical"
-                            android:textColor="#ffffff"
-                            android:textColorHint="#bcbcbc"
-                            android:hint="Search"
-                            android:backgroundTint="#bcbcbc"
-                            android:paddingLeft="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                        <ImageView
-                            android:paddingTop="15dp"
-                            android:focusable="false"
-                            android:paddingBottom="13dp"
-                            android:src="@drawable/ic_search_white"
-                            android:layout_width="30dp"
-                            android:layout_gravity="right"
-                            android:layout_height="match_parent" />
-                    </FrameLayout>
+                    <TextView
+                        android:id="@+id/txtBackSlideMenu"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="17sp"
+                        android:textColor="@android:color/white"
+                        android:text="Back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
-            //Swiper
+            //2
             <FrameLayout
-                android:padding="0.5dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="190dp">
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/viewPager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </android.support.v4.view.ViewPager>
-            </FrameLayout>
-            //Tabbar
-            <LinearLayout
-                android:weightSum="3"
-                android:orientation="horizontal"
-                android:layout_marginRight="50dp"
-                android:layout_marginLeft="50dp"
-                android:background="@drawable/bg_tabbar"
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
-                <TextView
-                    android:id="@+id/txtInTheaters"
-                    android:background="@drawable/bg_item0_tabbar_nonselected"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:textColor="@color/colorYellow"
-                    android:text="In Theaters"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:id="@+id/txtUpcoming"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp"
-                    android:gravity="center"
-                    android:text="Upcoming"
-                    android:background="@drawable/bg_item1_tabbar_selected"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:id="@+id/txtPopular"
-                    android:background="@drawable/bg_item2_tabbar_nonselected"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorYellow"
-                    android:textSize="14sp"
-                    android:gravity="center"
-                    android:text="Popular"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            //Movie list
-            <FrameLayout
-                android:id="@+id/containerMovieList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </FrameLayout>
-            //More Movie
-            <LinearLayout
-                android:layout_marginRight="10dp"
-                android:weightSum="10"
-                android:layout_width="match_parent"
-                android:layout_height="30dp">
-                <android.support.v4.widget.Space
-                    android:layout_weight="6"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:id="@+id/txtMoreMovie"
-                    android:typeface="serif"
-                    android:textStyle="italic|bold"
-                    android:gravity="top|right"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="10dp"
-                    android:layout_weight="4"
-                    android:textSize="13sp"
-                    android:textColor="@color/colorYellow"
-                    android:text=" >> More Movies"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            //Category
-            <LinearLayout
-                android:layout_marginBottom="5dp"
-                android:weightSum="10"
-                android:layout_marginLeft="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="23dp">
-                <ImageView
-                    android:layout_gravity="left"
-                    android:paddingRight="10dp"
-                    android:src="@drawable/imgcategory"
-                    android:layout_weight="0.9"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:typeface="serif"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:textColor="@color/colorYellow"
-                    android:text="Genres of Movie"
-                    android:layout_weight="9"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            <LinearLayout
-                android:gravity="center"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="9dp"
-                android:layout_marginLeft="9dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Martial arts"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Mockumentary"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Documentary"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="7dp"
-                android:gravity="center_horizontal"
-                android:layout_marginRight="9dp"
-                android:layout_marginLeft="9dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Adventure"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Horror"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Romance"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-                <TextView
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Comedy "
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginBottom="30dp"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="7dp"
-                android:layout_marginRight="9dp"
-                android:layout_marginLeft="9dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Animation"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Disaster"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Superhero"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-                <TextView
-                    android:layout_marginRight="7dp"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:text="Action"
-                    android:background="@drawable/bg_tabbar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-
-
-
-</LinearLayout>
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:background="@android:color/black"
-        android:layout_marginTop="67dp"
-        android:layout_marginLeft="30dp"
-        android:layout_width="102dp"
-        android:layout_height="340dp"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true" >
-        <LinearLayout
-            android:background="@drawable/bg_viewpage"
-            android:layout_marginLeft="12dp"
-            android:orientation="vertical"
-            android:weightSum="8"
-            android:layout_width="90dp"
-            android:layout_height="340dp">
-            //2.5
-            <LinearLayout
-                android:paddingTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:weightSum="4"
-                android:orientation="vertical"
-                android:layout_weight="2.7"
+                android:layout_weight="2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
                     app:civ_border_width="1dp"
                     app:civ_border_color="@color/colorYellow"
                     android:src="@drawable/avt"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp" />
-                <TextView
-                    android:layout_marginTop="5dp"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:textColor="@android:color/white"
-                    android:text="Kunpark"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp" />
-            </LinearLayout>
-            //1
-            <FrameLayout
-                android:layout_weight="1.2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-                <ImageView
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_account"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
             </FrameLayout>
-            //1
-            <FrameLayout
-                android:id="@+id/layoutFavoriteMovie"
-                android:layout_weight="1.2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-                <ImageView
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_love"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
-            </FrameLayout>
-            //1
-            <FrameLayout
-                android:layout_weight="1.2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-                <ImageView
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_nonstar"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
-            </FrameLayout>
-            //1
-            <FrameLayout
-                android:layout_weight="1.2"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-                <ImageView
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_share"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
-            </FrameLayout>
-            //1
+            //0.4
             <TextView
-                android:textSize="12sp"
-                android:gravity="center_horizontal"
+                android:typeface="serif"
+                android:gravity="center"
+                android:textSize="18sp"
                 android:textColor="@android:color/white"
-                android:text="Version 1.0"
-                android:layout_weight="1"
+                android:text="Kunpark"
+                android:layout_weight="0.4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp" />
+            //0.4
+            <TextView
+                android:gravity="center"
+                android:textStyle="italic"
+                android:textColor="@android:color/white"
+                android:text="Pikakun19@gmail.com"
+                android:layout_weight="0.4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            //1
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <ImageView
+                    android:padding="17dp"
+                    android:src="@drawable/ic_home"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="Home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            //1
+            <LinearLayout
+                android:id="@+id/layoutFavorite"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <ImageView
+                    android:padding="17dp"
+                    android:src="@drawable/ic_nonheart_white"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="Favorite Movie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            //1
+            <LinearLayout
+                android:id="@+id/layoutNotification"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <FrameLayout
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:padding="17dp"
+                        android:src="@drawable/ic_earth_white"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:text="3"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="right"
+                        android:background="@drawable/bg_notification_red"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp" />
+                </FrameLayout>
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="Notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            //1
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <ImageView
+                    android:padding="17dp"
+                    android:src="@drawable/ic_info"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="About us"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            //1
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <ImageView
+                    android:padding="18dp"
+                    android:src="@drawable/ic_share"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="Share with us"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
         </LinearLayout>
-    </android.support.design.widget.NavigationView>
-</android.support.v4.widget.DrawerLayout>
+    </nl.psdcompany.duonavigationdrawer.views.DuoMenuView>
+    <LinearLayout
+        android:tag="content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                //SearchBox 1
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <ImageView
+                            android:id="@+id/imgSildemenu"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.55"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="15dp"
+                            android:src="@drawable/ic_menu" />
+
+                        <FrameLayout
+                            android:id="@+id/layoutSearch"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="9.45">
+
+                            <EditText
+                                android:id="@+id/edtSearchMain"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="#bcbcbc"
+                                android:focusable="false"
+                                android:gravity="center_vertical"
+                                android:hint="Search"
+                                android:paddingLeft="10dp"
+                                android:textColor="#ffffff"
+                                android:textColorHint="#bcbcbc"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:focusable="false"
+                                android:paddingBottom="13dp"
+                                android:paddingTop="15dp"
+                                android:src="@drawable/ic_search_white" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                //Swiper
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="vertical"
+                    android:padding="0.5dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+                </FrameLayout>
+                //Tabbar
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_tabbar"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/txtInTheaters"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_item0_tabbar_nonselected"
+                        android:gravity="center"
+                        android:text="In Theaters"
+                        android:textColor="@color/colorYellow"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtUpcoming"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_item1_tabbar_selected"
+                        android:gravity="center"
+                        android:text="Upcoming"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txtPopular"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_item2_tabbar_nonselected"
+                        android:gravity="center"
+                        android:text="Popular"
+                        android:textColor="@color/colorYellow"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                //Movie list
+
+                <FrameLayout
+                    android:id="@+id/containerMovieList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></FrameLayout>
+                //More Movie
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:weightSum="10">
+
+                    <android.support.v4.widget.Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6" />
+
+                    <TextView
+                        android:id="@+id/txtMoreMovie"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="top|right"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="5dp"
+                        android:text=" >> More Movies"
+                        android:textColor="@color/colorYellow"
+                        android:textSize="13sp"
+                        android:textStyle="italic|bold"
+                        android:typeface="serif" />
+                </LinearLayout>
+                //Category
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="23dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left"
+                        android:layout_weight="0.9"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/imgcategory" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="9"
+                        android:text="Genres of Movie"
+                        android:textColor="@color/colorYellow"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="serif" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Martial arts"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Mockumentary"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Documentary"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Adventure"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Horror"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Romance"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Comedy "
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Animation"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Disaster"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Superhero"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/bg_tabbar"
+                        android:gravity="center"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="Action"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout>

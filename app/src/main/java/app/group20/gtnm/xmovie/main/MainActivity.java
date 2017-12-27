@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -26,20 +27,24 @@ import app.group20.gtnm.xmovie.main.inTheater.InTheaterFragment;
 import app.group20.gtnm.xmovie.main.movielist.MorePopularMovieActivity;
 import app.group20.gtnm.xmovie.main.movielist.MoreTheaterMovieActivity;
 import app.group20.gtnm.xmovie.main.movielist.MoreUpcomingMovie;
+import app.group20.gtnm.xmovie.main.notification.NotificationActivity;
 import app.group20.gtnm.xmovie.main.popular.PopularFragment;
 import app.group20.gtnm.xmovie.main.search.SearchActivity;
 import app.group20.gtnm.xmovie.main.upComing.UpcomingFragment;
+import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout;
+import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ViewPager viewPager;
-    private DrawerLayout drawer;
+    private DuoDrawerLayout drawer;
     private ViewPagerAdapter adapter;
-    private ImageView imgSilderMenu;
+    private ImageView imgSilderMenu, imgBackMenu;
     private TextView txtMoreMovie;
     private int NUM_PAGES, currentPage;
-    private TextView txtIntheaters, txtUpcoming, txtPopular;
-    private FrameLayout layoutSearch, layoutFavoriteMovie;
+    private TextView txtIntheaters, txtUpcoming, txtPopular, txtBackMenu;
+    private FrameLayout layoutSearch;
+    private LinearLayout layoutFavoriteMovie, layoutNotification;
     private EditText edtSearchMain;
     private UpcomingFragment upcomingFragment;
     private int typeMovie = 1, arrPoster_landscape [] = {R.drawable.baner01, R.drawable.baner02, R.drawable.baner03, R.drawable.baner04, R.drawable.baner05};
@@ -59,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void addEvents() {
+        txtBackMenu.setOnClickListener(this);
+        imgBackMenu.setOnClickListener(this);
         edtSearchMain.setOnClickListener(this);
         txtIntheaters.setOnClickListener(this);
         txtUpcoming.setOnClickListener(this);
@@ -67,12 +74,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imgSilderMenu.setOnClickListener(this);
         layoutSearch.setOnClickListener(this);
         layoutFavoriteMovie.setOnClickListener(this);
+        layoutNotification.setOnClickListener(this);
     }
 
     private void addControls() {
-        layoutFavoriteMovie = (FrameLayout) findViewById(R.id.layoutFavoriteMovie);
+        txtBackMenu = findViewById(R.id.txtBackSlideMenu);
+        imgBackMenu = findViewById(R.id.imgBackSlideMenu);
+        layoutFavoriteMovie = (LinearLayout) findViewById(R.id.layoutFavorite);
+        layoutNotification = findViewById(R.id.layoutNotification);
         edtSearchMain = (EditText) findViewById(R.id.edtSearchMain);
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DuoDrawerLayout) findViewById(R.id.drawer_layout);
         imgSilderMenu = (ImageView) findViewById(R.id.imgSildemenu);
         txtMoreMovie = (TextView) findViewById(R.id.txtMoreMovie);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -139,8 +150,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.txtMoreMovie :
                 moveToMoreMovieActivity ();
                 break;
-            case R.id.layoutFavoriteMovie :
+            case R.id.imgBackSlideMenu :
+                drawer.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.txtBackSlideMenu :
+                drawer.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.layoutFavorite :
                 startActivity(new Intent(MainActivity.this, FavoriteMovieActivity.class));
+                break;
+            case R.id.layoutNotification :
+                startActivity(new Intent(MainActivity.this, NotificationActivity.class));
                 break;
             case R.id.imgSildemenu :
                 if (!drawer.isDrawerOpen(GravityCompat.START)) {
@@ -160,44 +180,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
-        /*if (id == R.id.txtInTheaters){
-           // dialogPink.show();
-            typeMovie = 0;
-            newFragment = new InTheaterFragment();
-            changeColorTabbar(0);
-
-        }else if (id == R.id.txtUpcoming){
-          //  dialogBlue.show();
-            typeMovie = 1;
-            newFragment = new UpcomingFragment();
-            changeColorTabbar(1);
-
-        }else if (id == R.id.txtPopular){
-           // dialogGreen.show();
-            typeMovie = 2;
-            newFragment = new PopularFragment();
-            changeColorTabbar(2);
-        }
-        if (id == R.id.txtMoreMovie){
-            moveToMoreMovieActivity ();
-        }
-        if (id == R.id.imgSildemenu){
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            if (drawer.isDrawerOpen(GravityCompat.START)) {
-                drawer.closeDrawer(GravityCompat.START);
-            } else {
-                super.onBackPressed();
-            }
-        }
-        if (newFragment != null) {
-            fragmentTransaction.replace(R.id.containerMovieList, newFragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-        }*/
     }
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DuoDrawerLayout drawer = (DuoDrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

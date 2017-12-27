@@ -11,6 +11,7 @@ import android.text.Html;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,18 +20,22 @@ import com.ms.square.android.expandabletextview.ExpandableTextView;
 import java.util.ArrayList;
 
 import app.group20.gtnm.xmovie.R;
+import app.group20.gtnm.xmovie.main.favorite_movie.FavoriteMovieActivity;
+import app.group20.gtnm.xmovie.main.notification.NotificationActivity;
+import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout;
 
 public class DetailUpcomingActivity extends AppCompatActivity {
 
-    private ImageView imgShare, imgSlideMenu_Upcoming;
+    private ImageView imgShare, imgSlideMenu_Upcoming, imgBackMenu;
     private TextView imgPlaytrailer;
     private RecyclerView recyclerActor;
-    private DrawerLayout drawer;
+    private DuoDrawerLayout drawer;
     private ArrayList<Actor> arrActor;
     private ActorAdapter adapter;
     private boolean flagFavorite = false;
-    private TextView txtCountHeart;
+    private TextView txtCountHeart, txtBackMenu;
     private RecyclerView.LayoutManager layoutManager;
+    private LinearLayout layoutFavoriteMovie, layoutNotification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +45,31 @@ public class DetailUpcomingActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+        txtBackMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+        imgBackMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
+        layoutFavoriteMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailUpcomingActivity.this, FavoriteMovieActivity.class));
+            }
+        });
+        layoutNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailUpcomingActivity.this, NotificationActivity.class));
+            }
+        });
         imgShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,8 +107,12 @@ public class DetailUpcomingActivity extends AppCompatActivity {
     }
 
     private void addControls() {
+        txtBackMenu = findViewById(R.id.txtBackSlideMenuUpcoming);
+        imgBackMenu = findViewById(R.id.imgBackSlideMenuUpcoming);
+        layoutFavoriteMovie = (LinearLayout) findViewById(R.id.layoutFavoriteUpcoming);
+        layoutNotification = findViewById(R.id.layoutNotificationUpcoming);
         txtCountHeart = (TextView) findViewById(R.id.txtCountHeartUpcoming);
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout_upcoming);
+        drawer = (DuoDrawerLayout) findViewById(R.id.drawer_layout_upcoming);
         imgSlideMenu_Upcoming = (ImageView) findViewById(R.id.imgSlideMenu_Upcoming);
         imgShare = (ImageView) findViewById(R.id.imgShareUpcoming);
         imgPlaytrailer = (TextView) findViewById(R.id.imgPlaytrailerUpcoming);

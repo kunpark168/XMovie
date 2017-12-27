@@ -11,23 +11,29 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import app.group20.gtnm.xmovie.R;
+import app.group20.gtnm.xmovie.main.favorite_movie.FavoriteMovieActivity;
+import app.group20.gtnm.xmovie.main.notification.NotificationActivity;
+import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout;
 
 public class DetailTheaterActivity extends AppCompatActivity{
 
     private RecyclerView recyclerActor;
     private ArrayList<Actor> arrActor;
-    private DrawerLayout drawer;
+    private DuoDrawerLayout drawer;
     private ActorAdapter adapter;
-    private TextView txtCountHeart;
+    private TextView txtCountHeart, txtBackMenu;
     private RecyclerView.LayoutManager layoutManager;
-    private ImageView imgShare, imgSlideMenu_Theater;
+    private ImageView imgShare, imgSlideMenu_Theater, imgBackMenu;
     private TextView imgPlaytrailer;
+
+    private LinearLayout layoutFavoriteMovie, layoutNotification;
     private boolean flagFavorite = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,32 @@ public class DetailTheaterActivity extends AppCompatActivity{
     }
 
     private void addEvents() {
+
+        txtBackMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+        imgBackMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
+        layoutFavoriteMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailTheaterActivity.this, FavoriteMovieActivity.class));
+            }
+        });
+        layoutNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailTheaterActivity.this, NotificationActivity.class));
+            }
+        });
         imgPlaytrailer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +107,12 @@ public class DetailTheaterActivity extends AppCompatActivity{
     }
 
     private void addControls() {
+        txtBackMenu = findViewById(R.id.txtBackSlideMenuTheater);
+        imgBackMenu = findViewById(R.id.imgBackSlideMenuTheater);
+        layoutFavoriteMovie = (LinearLayout) findViewById(R.id.layoutFavoriteTheater);
+        layoutNotification = findViewById(R.id.layoutNotificationTheater);
         txtCountHeart = (TextView) findViewById(R.id.txtCountHeartIntheater);
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout_theater);
+        drawer = (DuoDrawerLayout) findViewById(R.id.drawer_layout_theater);
         imgSlideMenu_Theater = (ImageView) findViewById(R.id.imgSlideMenu_Theater);
         imgShare = (ImageView) findViewById(R.id.imgShareTheater);
         imgPlaytrailer = (TextView) findViewById(R.id.imgPlaytrailerTheater);

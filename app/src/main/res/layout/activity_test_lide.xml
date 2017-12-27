@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/black"
+    android:weightSum="10"
+    android:orientation="vertical"
+    tools:context="app.group20.gtnm.xmovie.main.TestLideActivity">
+    //SearchBox 0.7
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_weight="0.7"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:weightSum="10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imgBackSearch"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_back_white"
+                android:layout_weight="0.55"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textSize="17sp"
+                android:textColor="@android:color/white"
+                android:text="Back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    //2
+    <FrameLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_gravity="center"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/colorYellow"
+            android:src="@drawable/avt"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+    </FrameLayout>
+    //0.4
+    <TextView
+        android:typeface="serif"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:text="Kunpark"
+        android:layout_weight="0.4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    //0.4
+    <TextView
+        android:gravity="center"
+        android:textStyle="italic"
+        android:textColor="@android:color/white"
+        android:text="Pikakun19@gmail.com"
+        android:layout_weight="0.4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    //1
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+            android:padding="17dp"
+            android:src="@drawable/ic_home"
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:text="Home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    //1
+    <LinearLayout
+        android:id="@+id/layoutFavorite"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+            android:padding="17dp"
+            android:src="@drawable/ic_nonheart_white"
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:text="Favorite Movie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    //1
+    <LinearLayout
+        android:id="@+id/layoutNotification"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <FrameLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:padding="17dp"
+                android:src="@drawable/ic_earth_white"
+                android:layout_width="60dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:text="5"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="right"
+                android:background="@drawable/bg_notification_red"
+                android:layout_width="17dp"
+                android:layout_height="17dp" />
+        </FrameLayout>
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:text="Notification"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    //1
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+            android:padding="17dp"
+            android:src="@drawable/ic_info"
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:text="About us"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    //1
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageView
+            android:padding="18dp"
+            android:src="@drawable/ic_share"
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+            android:gravity="center_vertical"
+            android:text="Share with us"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>

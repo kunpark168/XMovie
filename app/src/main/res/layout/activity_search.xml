@@ -108,10 +108,10 @@
                     <TextView
                         android:gravity="center_vertical"
                         android:maxLines="1"
-                        android:textSize="10sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
-                        android:text="MEMORIES MURDER"
+                        android:text="Memories Murred"
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp" />
@@ -197,7 +197,7 @@
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:text="Biệt Đội Runaways (Phần 1)"
-                        android:layout_weight="1"
+                        android:layout_weight="1.3"
                         android:layout_width="match_parent"
                         android:layout_height="0dp" />
                     <LinearLayout
@@ -282,7 +282,7 @@
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:text="Tân Lương Sơn Bá Chúc Anh Đài"
-                        android:layout_weight="1"
+                        android:layout_weight="1.3"
                         android:layout_width="match_parent"
                         android:layout_height="0dp" />
                     <LinearLayout
@@ -367,7 +367,7 @@
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:text="Quốc Sĩ Vô Song Hoàng Phi Hồng"
-                        android:layout_weight="1"
+                        android:layout_weight="1.3"
                         android:layout_width="match_parent"
                         android:layout_height="0dp" />
                     <LinearLayout
@@ -452,7 +452,7 @@
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:text="Giao Lộ Âm Dương"
-                        android:layout_weight="1"
+                        android:layout_weight="1.3"
                         android:layout_width="match_parent"
                         android:layout_height="0dp" />
                     <LinearLayout
@@ -537,7 +537,7 @@
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:text="Bố Bận, Bác Cũng Không Rảnh"
-                        android:layout_weight="1"
+                        android:layout_weight="1.3"
                         android:layout_width="match_parent"
                         android:layout_height="0dp" />
                     <LinearLayout
@@ -622,7 +622,7 @@
                         android:textStyle="bold"
                         android:textColor="@android:color/white"
                         android:text="Trải Nghiệm Điểm Chết"
-                        android:layout_weight="1"
+                        android:layout_weight="1.3"
                         android:layout_width="match_parent"
                         android:layout_height="0dp" />
                     <LinearLayout

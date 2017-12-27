@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout_popular"
@@ -9,7 +10,209 @@
     tools:context="app.group20.gtnm.xmovie.main.detailMovie.DetailUpcomingActivity"
     tools:openDrawer="start">
 
+    <nl.psdcompany.duonavigationdrawer.views.DuoMenuView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:tag="@string/tag_menu">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:weightSum="10"
+            android:orientation="vertical"
+            tools:context="app.group20.gtnm.xmovie.main.TestLideActivity">
+            //SearchBox 0.7
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_weight="0.7"
+                android:layout_height="0dp">
+                <LinearLayout
+                    android:weightSum="10"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/imgBackSlideMenuPopular"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_back_white"
+                        android:layout_weight="0.55"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:id="@+id/txtBackSlideMenuPopular"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="17sp"
+                        android:textColor="@android:color/white"
+                        android:text="Back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </LinearLayout>
+            //2
+            <FrameLayout
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="center"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/colorYellow"
+                    android:src="@drawable/avt"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+            </FrameLayout>
+            //0.4
+            <TextView
+                android:typeface="serif"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:text="Kunpark"
+                android:layout_weight="0.4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            //0.4
+            <TextView
+                android:gravity="center"
+                android:textStyle="italic"
+                android:textColor="@android:color/white"
+                android:text="Pikakun19@gmail.com"
+                android:layout_weight="0.4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+            //1
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <ImageView
+                    android:padding="17dp"
+                    android:src="@drawable/ic_home"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="Home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            //1
+            <LinearLayout
+                android:id="@+id/layoutFavoritePopular"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <ImageView
+                    android:padding="17dp"
+                    android:src="@drawable/ic_nonheart_white"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="Favorite Movie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            //1
+            <LinearLayout
+                android:id="@+id/layoutNotificationPopular"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <FrameLayout
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:padding="17dp"
+                        android:src="@drawable/ic_earth_white"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:text="3"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="right"
+                        android:background="@drawable/bg_notification_red"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp" />
+                </FrameLayout>
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="Notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            //1
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <ImageView
+                    android:padding="17dp"
+                    android:src="@drawable/ic_info"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="About us"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            //1
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <ImageView
+                    android:padding="18dp"
+                    android:src="@drawable/ic_share"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="Share with us"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </nl.psdcompany.duonavigationdrawer.views.DuoMenuView>
     <LinearLayout
+        android:tag="content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#000"
@@ -904,114 +1107,4 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="102dp"
-        android:layout_height="340dp"
-        android:layout_gravity="start"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="67dp"
-        android:background="@android:color/transparent"
-        android:fitsSystemWindows="true">
-
-        <LinearLayout
-            android:layout_width="90dp"
-            android:layout_height="340dp"
-            android:layout_marginLeft="12dp"
-            android:background="@drawable/bg_viewpage"
-            android:orientation="vertical"
-            android:weightSum="8">
-            //2.5
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="2.7"
-                android:orientation="vertical"
-                android:paddingTop="10dp"
-                android:weightSum="4">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:src="@drawable/avt"
-                    app:civ_border_color="@color/colorYellow"
-                    app:civ_border_width="1dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:text="Kunpark"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            //1
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.2">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_account" />
-            </FrameLayout>
-            //1
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.2">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_love" />
-            </FrameLayout>
-            //1
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.2">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_nonstar" />
-            </FrameLayout>
-            //1
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1.2">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/icon_share" />
-            </FrameLayout>
-            //1
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="Version 1.0"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-        </LinearLayout>
-    </android.support.design.widget.NavigationView>
-</android.support.v4.widget.DrawerLayout>
+</nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout>

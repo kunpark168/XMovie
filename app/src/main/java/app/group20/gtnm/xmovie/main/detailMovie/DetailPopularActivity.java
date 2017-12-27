@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,15 +19,19 @@ import com.ms.square.android.expandabletextview.ExpandableTextView;
 import java.util.ArrayList;
 
 import app.group20.gtnm.xmovie.R;
+import app.group20.gtnm.xmovie.main.favorite_movie.FavoriteMovieActivity;
+import app.group20.gtnm.xmovie.main.notification.NotificationActivity;
+import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout;
 
 public class DetailPopularActivity extends AppCompatActivity {
 
     private RecyclerView recyclerActor;
     private ArrayList<Actor> arrActor;
-    private DrawerLayout drawer;
+    private DuoDrawerLayout drawer;
     private ActorAdapter adapter;
-    private ImageView imgShare, imgSlideMenu_Popular;
-    private TextView imgPlaytrailer, txtCountHeart;
+    private ImageView imgShare, imgSlideMenu_Popular, imgBackMenu;
+    private TextView imgPlaytrailer, txtCountHeart, txtBackMenu;
+    private LinearLayout layoutFavoriteMovie, layoutNotification;
     private RecyclerView.LayoutManager layoutManager;
     private boolean flagFavorite = false;
     @Override
@@ -38,6 +43,31 @@ public class DetailPopularActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+        txtBackMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+        imgBackMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
+        layoutFavoriteMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailPopularActivity.this, FavoriteMovieActivity.class));
+            }
+        });
+        layoutNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DetailPopularActivity.this, NotificationActivity.class));
+            }
+        });
         imgShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +105,13 @@ public class DetailPopularActivity extends AppCompatActivity {
     }
 
     private void addControls() {
+        txtBackMenu = findViewById(R.id.txtBackSlideMenuPopular);
+        imgBackMenu = findViewById(R.id.imgBackSlideMenuPopular);
+        layoutFavoriteMovie = (LinearLayout) findViewById(R.id.layoutFavoritePopular);
+        layoutNotification = findViewById(R.id.layoutNotificationPopular);
+        txtCountHeart = (TextView) findViewById(R.id.txtCountHeartIntheater);
         txtCountHeart = (TextView) findViewById(R.id.txtCountHeart);
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout_popular);
+        drawer = (DuoDrawerLayout) findViewById(R.id.drawer_layout_popular);
         imgSlideMenu_Popular = (ImageView) findViewById(R.id.imgSlideMenu_Popular);
         imgShare = (ImageView) findViewById(R.id.imgSharePopular);
         imgPlaytrailer = (TextView) findViewById(R.id.imgPlaytrailerPopular);
