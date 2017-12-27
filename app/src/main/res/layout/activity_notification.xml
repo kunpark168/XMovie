@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="app.group20.gtnm.xmovie.main.favorite_movie.FavoriteMovieActivity">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <LinearLayout
+            android:weightSum="10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imgBackNotification"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_back2"
+                android:layout_weight="0.55"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:text="Notification (3)"
+                android:layout_weight="9.45"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+    <ScrollView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="9.9"
+                    android:layout_height="0dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/colorYellow"
+                        android:src="@drawable/avt"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:weightSum="10"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+                            <TextView
+                                android:gravity="bottom"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorYellow"
+                                android:text="Kunpark"
+                                android:layout_width="0dp"
+                                android:layout_weight="2.2"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:gravity="bottom"
+                                android:layout_marginLeft="5dp"
+                                android:textSize="15sp"
+                                android:textColor="@android:color/white"
+                                android:text="reply your comment"
+                                android:layout_width="0dp"
+                                android:layout_weight="6.8"
+                                android:layout_height="match_parent" />
+                            <FrameLayout
+                                android:visibility="gone"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:layout_gravity="right|center_vertical"
+                                    android:background="@drawable/bg_notificaiton"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                        <TextView
+                            android:textStyle="italic"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:text="10 minutes ago"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorYellow"
+                    android:layout_weight="0.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="9.9"
+                    android:layout_height="0dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/colorYellow"
+                        android:src="@drawable/actor1"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:weightSum="10"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+                            <TextView
+                                android:gravity="bottom"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorYellow"
+                                android:text="Đặng Tấn Tài"
+                                android:layout_width="0dp"
+                                android:layout_weight="3.4"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:gravity="bottom"
+                                android:layout_marginLeft="5dp"
+                                android:textSize="15sp"
+                                android:textColor="@android:color/white"
+                                android:text="reply your comment"
+                                android:layout_width="0dp"
+                                android:layout_weight="6.8"
+                                android:layout_height="match_parent" />
+                            <FrameLayout
+                                android:visibility="gone"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:layout_gravity="right|center_vertical"
+                                    android:background="@drawable/bg_notificaiton"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                        <TextView
+                            android:textStyle="italic"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:text="12 minutes ago"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorYellow"
+                    android:layout_weight="0.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="9.9"
+                    android:layout_height="0dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/colorYellow"
+                        android:src="@drawable/actor2"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:weightSum="10"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+                            <TextView
+                                android:gravity="bottom"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorYellow"
+                                android:text="Khanh Nguyen"
+                                android:layout_width="0dp"
+                                android:layout_weight="4"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:gravity="bottom"
+                                android:layout_marginLeft="5dp"
+                                android:textSize="15sp"
+                                android:textColor="@android:color/white"
+                                android:text="reply your comme.."
+                                android:layout_width="0dp"
+                                android:layout_weight="5"
+                                android:layout_height="match_parent" />
+                            <FrameLayout
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:layout_gravity="right|center_vertical"
+                                    android:background="@drawable/bg_notificaiton"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                        <TextView
+                            android:textStyle="italic"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:text="30 minutes ago"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorYellow"
+                    android:layout_weight="0.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="9.9"
+                    android:layout_height="0dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/colorYellow"
+                        android:src="@drawable/actor3"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:weightSum="10"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+                            <TextView
+                                android:gravity="bottom"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorYellow"
+                                android:text="Thương nhau để đó"
+                                android:layout_width="0dp"
+                                android:layout_weight="5"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:gravity="bottom"
+                                android:maxLines="1"
+                                android:layout_marginLeft="5dp"
+                                android:textSize="15sp"
+                                android:textColor="@android:color/white"
+                                android:text="reply your comme.."
+                                android:layout_width="0dp"
+                                android:layout_weight="5"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+                        <TextView
+                            android:textStyle="italic"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:text="55 minutes ago"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorYellow"
+                    android:layout_weight="0.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="9.9"
+                    android:layout_height="0dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/colorYellow"
+                        android:src="@drawable/avt"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:weightSum="10"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+                            <TextView
+                                android:gravity="bottom"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorYellow"
+                                android:text="Kunpark"
+                                android:layout_width="0dp"
+                                android:layout_weight="2.2"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:gravity="bottom"
+                                android:layout_marginLeft="5dp"
+                                android:textSize="15sp"
+                                android:textColor="@android:color/white"
+                                android:text="reply your comment"
+                                android:layout_width="0dp"
+                                android:layout_weight="6.8"
+                                android:layout_height="match_parent" />
+                            <FrameLayout
+                                android:visibility="gone"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:layout_gravity="right|center_vertical"
+                                    android:background="@drawable/bg_notificaiton"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                        <TextView
+                            android:textStyle="italic"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:text="1 hour ago"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorYellow"
+                    android:layout_weight="0.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="9.9"
+                    android:layout_height="0dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/colorYellow"
+                        android:src="@drawable/avt"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:weightSum="10"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+                            <TextView
+                                android:gravity="bottom"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorYellow"
+                                android:text="Kunpark"
+                                android:layout_width="0dp"
+                                android:layout_weight="2.2"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:gravity="bottom"
+                                android:layout_marginLeft="5dp"
+                                android:textSize="15sp"
+                                android:textColor="@android:color/white"
+                                android:text="reply your comment"
+                                android:layout_width="0dp"
+                                android:layout_weight="6.8"
+                                android:layout_height="match_parent" />
+                            <FrameLayout
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:layout_gravity="right|center_vertical"
+                                    android:background="@drawable/bg_notificaiton"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                        <TextView
+                            android:textStyle="italic"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:text="2 hours ago"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorYellow"
+                    android:layout_weight="0.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="9.9"
+                    android:layout_height="0dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/colorYellow"
+                        android:src="@drawable/avt"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:weightSum="10"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+                            <TextView
+                                android:gravity="bottom"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorYellow"
+                                android:text="Kunpark"
+                                android:layout_width="0dp"
+                                android:layout_weight="2.2"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:gravity="bottom"
+                                android:layout_marginLeft="5dp"
+                                android:textSize="15sp"
+                                android:textColor="@android:color/white"
+                                android:text="reply your comment"
+                                android:layout_width="0dp"
+                                android:layout_weight="6.8"
+                                android:layout_height="match_parent" />
+                            <FrameLayout
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:layout_gravity="right|center_vertical"
+                                    android:background="@drawable/bg_notificaiton"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                        <TextView
+                            android:textStyle="italic"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:text="1 day ago"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorYellow"
+                    android:layout_weight="0.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="9.9"
+                    android:layout_height="0dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/colorYellow"
+                        android:src="@drawable/avt"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:weightSum="10"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp">
+                            <TextView
+                                android:gravity="bottom"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorYellow"
+                                android:text="Kunpark"
+                                android:layout_width="0dp"
+                                android:layout_weight="2.2"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:gravity="bottom"
+                                android:layout_marginLeft="5dp"
+                                android:textSize="15sp"
+                                android:textColor="@android:color/white"
+                                android:text="reply your comment"
+                                android:layout_width="0dp"
+                                android:layout_weight="6.8"
+                                android:layout_height="match_parent" />
+                            <FrameLayout
+                                android:visibility="gone"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+                                <TextView
+                                    android:layout_gravity="right|center_vertical"
+                                    android:background="@drawable/bg_notificaiton"
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                        <TextView
+                            android:textStyle="italic"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/white"
+                            android:text="12/10/2017"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorYellow"
+                    android:layout_weight="0.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

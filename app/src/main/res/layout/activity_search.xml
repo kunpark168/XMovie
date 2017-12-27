@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="app.group20.gtnm.xmovie.main.search.SearchActivity">
+    //SearchBox 1
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <LinearLayout
+            android:weightSum="10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imgBackSearch"
+                android:paddingTop="15dp"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_back_white"
+                android:layout_weight="0.55"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <FrameLayout
+                android:layout_marginRight="5dp"
+                android:layout_weight="9.45"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <EditText
+                    android:textSize="15sp"
+                    android:gravity="center_vertical"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#bcbcbc"
+                    android:hint="Search"
+                    android:backgroundTint="#bcbcbc"
+                    android:paddingLeft="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:paddingTop="15dp"
+                    android:focusable="false"
+                    android:paddingBottom="13dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ic_search_white"
+                    android:layout_width="30dp"
+                    android:layout_gravity="right"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+        <TextView
+            android:textColor="#979797"
+            android:text="History search"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"
+            android:typeface="serif"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_gravity="right"
+            android:textStyle="bold"
+            android:textColor="#979797"
+            android:text="EDIT"
+            android:layout_marginRight="10dp"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+    <ScrollView
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/layoutSearch1"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/posteri2"
+                    android:layout_weight="1.7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="3"
+                    android:orientation="vertical"
+                    android:layout_weight="7"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="MEMORIES MURDER"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:gravity="left|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.0/10"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgDelete1"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_delete"
+                    android:onClick="deleteItemSearch"
+                    android:padding="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutSearch2"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/posteri5"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="3"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Biệt Đội Runaways (Phần 1)"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:gravity="left|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.0/10"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgDelete2"
+                    android:layout_gravity="right"
+                    android:onClick="deleteItemSearch"
+                    android:src="@drawable/ic_delete"
+                    android:padding="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutSearch3"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/posteru9"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="3"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Tân Lương Sơn Bá Chúc Anh Đài"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:gravity="left|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.0/10"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgDelete3"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_delete"
+                    android:onClick="deleteItemSearch"
+                    android:padding="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutSearch4"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/posteri8"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="3"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Quốc Sĩ Vô Song Hoàng Phi Hồng"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:gravity="left|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.0/10"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgDelete4"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_delete"
+                    android:onClick="deleteItemSearch"
+                    android:padding="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutSearch5"
+                android:weightSum="10"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/posterp7"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="3"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Giao Lộ Âm Dương"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:gravity="left|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.0/10"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgDelete5"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_delete"
+                    android:onClick="deleteItemSearch"
+                    android:padding="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutSearch6"
+                android:weightSum="10"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/posteru7"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="3"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Bố Bận, Bác Cũng Không Rảnh"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:gravity="left|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.0/10"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgDelete6"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_delete"
+                    android:onClick="deleteItemSearch"
+                    android:padding="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutSearch7"
+                android:weightSum="10"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/posteru6"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="3"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Trải Nghiệm Điểm Chết"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:layout_marginTop="2dp"
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp">
+                        <LinearLayout
+                            android:paddingTop="1.5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp">
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_star"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                            <ImageView
+                                android:src="@drawable/icon_nonstar"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:gravity="left|top"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:text="8.0/10"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgDelete7"
+                    android:layout_gravity="right"
+                    android:src="@drawable/ic_delete"
+                    android:onClick="deleteItemSearch"
+                    android:padding="15dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

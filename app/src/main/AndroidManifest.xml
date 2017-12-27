@@ -10,11 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".main.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".main.detailMovie.DetailUpcomingActivity" />
         <activity android:name=".main.detailMovie.DetailPopularActivity" />
@@ -29,7 +24,15 @@
         <activity
             android:name=".main.sliderMenu.SlideMenuActivity"
             android:label="@string/title_activity_slide_menu"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme" />
+        <activity android:name=".main.search.SearchActivity" />
+        <activity android:name=".main.favorite_movie.FavoriteMovieActivity"></activity>
+        <activity android:name=".main.notification.NotificationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

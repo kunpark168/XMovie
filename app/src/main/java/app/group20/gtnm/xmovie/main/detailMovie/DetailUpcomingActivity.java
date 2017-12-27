@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 
@@ -27,6 +28,8 @@ public class DetailUpcomingActivity extends AppCompatActivity {
     private DrawerLayout drawer;
     private ArrayList<Actor> arrActor;
     private ActorAdapter adapter;
+    private boolean flagFavorite = false;
+    private TextView txtCountHeart;
     private RecyclerView.LayoutManager layoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +43,17 @@ public class DetailUpcomingActivity extends AppCompatActivity {
         imgShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent share = new Intent(android.content.Intent.ACTION_SEND);
-                share.setType("text/plain");
-                share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-                share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
-                share.putExtra(Intent.EXTRA_TEXT, "http://www.phimmoi.net/phim/star-trek-hanh-trinh-kham-pha-6064/");
-
-                startActivity(Intent.createChooser(share, "Share This Movie"));
+                if (!flagFavorite){
+                    flagFavorite = true;
+                    imgShare.setImageResource(R.drawable.ic_heart);
+                    txtCountHeart.setText("125");
+                    Toast.makeText(DetailUpcomingActivity.this, "Liked", Toast.LENGTH_SHORT).show();
+                }else {
+                    flagFavorite = false;
+                    imgShare.setImageResource(R.drawable.ic_nonheart);
+                    txtCountHeart.setText("124");
+                    Toast.makeText(DetailUpcomingActivity.this, "UnLiked", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         imgPlaytrailer.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +77,7 @@ public class DetailUpcomingActivity extends AppCompatActivity {
     }
 
     private void addControls() {
+        txtCountHeart = (TextView) findViewById(R.id.txtCountHeartUpcoming);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout_upcoming);
         imgSlideMenu_Upcoming = (ImageView) findViewById(R.id.imgSlideMenu_Upcoming);
         imgShare = (ImageView) findViewById(R.id.imgShareUpcoming);

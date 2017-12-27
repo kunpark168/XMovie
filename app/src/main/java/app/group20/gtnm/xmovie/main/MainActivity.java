@@ -3,12 +3,17 @@ package app.group20.gtnm.xmovie.main;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,11 +21,13 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import app.group20.gtnm.xmovie.R;
+import app.group20.gtnm.xmovie.main.favorite_movie.FavoriteMovieActivity;
 import app.group20.gtnm.xmovie.main.inTheater.InTheaterFragment;
 import app.group20.gtnm.xmovie.main.movielist.MorePopularMovieActivity;
 import app.group20.gtnm.xmovie.main.movielist.MoreTheaterMovieActivity;
 import app.group20.gtnm.xmovie.main.movielist.MoreUpcomingMovie;
 import app.group20.gtnm.xmovie.main.popular.PopularFragment;
+import app.group20.gtnm.xmovie.main.search.SearchActivity;
 import app.group20.gtnm.xmovie.main.upComing.UpcomingFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -32,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView txtMoreMovie;
     private int NUM_PAGES, currentPage;
     private TextView txtIntheaters, txtUpcoming, txtPopular;
+    private FrameLayout layoutSearch, layoutFavoriteMovie;
+    private EditText edtSearchMain;
     private UpcomingFragment upcomingFragment;
     private int typeMovie = 1, arrPoster_landscape [] = {R.drawable.baner01, R.drawable.baner02, R.drawable.baner03, R.drawable.baner04, R.drawable.baner05};
     @Override
@@ -40,21 +49,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         addControls ();
         addEvents ();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+            window.setStatusBarColor(getResources().getColor(R.color.colorYellow));
+
+        }
     }
 
     private void addEvents() {
+        edtSearchMain.setOnClickListener(this);
         txtIntheaters.setOnClickListener(this);
         txtUpcoming.setOnClickListener(this);
         txtPopular.setOnClickListener(this);
         txtMoreMovie.setOnClickListener(this);
         imgSilderMenu.setOnClickListener(this);
+        layoutSearch.setOnClickListener(this);
+        layoutFavoriteMovie.setOnClickListener(this);
     }
 
     private void addControls() {
+        layoutFavoriteMovie = (FrameLayout) findViewById(R.id.layoutFavoriteMovie);
+        edtSearchMain = (EditText) findViewById(R.id.edtSearchMain);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         imgSilderMenu = (ImageView) findViewById(R.id.imgSildemenu);
         txtMoreMovie = (TextView) findViewById(R.id.txtMoreMovie);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
+        layoutSearch = (FrameLayout) findViewById(R.id.layoutSearch);
         adapter = new ViewPagerAdapter(this, arrPoster_landscape, viewPager);
         NUM_PAGES = adapter.getCount();
         currentPage = viewPager.getCurrentItem();
@@ -117,12 +139,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.txtMoreMovie :
                 moveToMoreMovieActivity ();
                 break;
+            case R.id.layoutFavoriteMovie :
+                startActivity(new Intent(MainActivity.this, FavoriteMovieActivity.class));
+                break;
             case R.id.imgSildemenu :
                 if (!drawer.isDrawerOpen(GravityCompat.START)) {
                     drawer.openDrawer(GravityCompat.START);
                 }else {
                     drawer.closeDrawer(GravityCompat.START);
                 }
+                break;
+            case  R.id.edtSearchMain :
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
                 break;
             default:
                 break;

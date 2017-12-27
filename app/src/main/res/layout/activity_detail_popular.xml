@@ -66,7 +66,7 @@
                             android:paddingBottom="8dp"
                             android:paddingLeft="5dp"
                             android:paddingTop="8dp"
-                            android:src="@drawable/iconshare" />
+                            android:src="@drawable/ic_nonheart" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -215,6 +215,7 @@
                             android:src="@drawable/iconheart" />
 
                         <TextView
+                            android:id="@+id/txtCountHeart"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="5dp"
@@ -366,14 +367,16 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_height="200dp"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="240dp"
-                    android:orientation="vertical">
-
+                    android:background="@android:color/black"
+                    xmlns:android="http://schemas.android.com/apk/res/android">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -386,81 +389,517 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="5dp"
-                            android:text="Recommanded Movies"
+                            android:text="Recommender"
                             android:textColor="@android:color/white"
                             android:textSize="16sp"
                             android:textStyle="bold"
                             android:typeface="serif" />
                     </LinearLayout>
-
-                    <LinearLayout
+                    <HorizontalScrollView
+                        android:layout_height="170dp"
                         android:layout_width="match_parent"
-                        android:layout_height="150dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
+                        xmlns:android="http://schemas.android.com/apk/res/android">
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_poster"
-                            android:padding="1dp">
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:background="@android:color/black"
+                                android:layout_width="200dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_height="170dp">
+                                <LinearLayout
+                                    android:padding="2dp"
+                                    android:background="@drawable/bg_poster"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp">
+                                    <ImageView
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/baner02"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:weightSum="3"
+                                    android:layout_marginTop="5dp"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp">
+                                    <TextView
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@android:color/white"
+                                        android:text="MEMORIES MURDER"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp" />
+                                    <LinearLayout
+                                        android:layout_marginTop="2dp"
+                                        android:orientation="horizontal"
+                                        android:layout_weight="2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp">
+                                        <LinearLayout
+                                            android:paddingTop="1.5dp"
+                                            android:layout_weight="1"
+                                            android:orientation="horizontal"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent">
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_nonstar"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                        </LinearLayout>
 
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/posterp3" />
+                                        <TextView
+                                            android:gravity="right|top"
+                                            android:textSize="10dp"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/white"
+                                            android:text="8.0/10"
+                                            android:layout_weight="1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:background="@android:color/black"
+                                android:layout_width="200dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_height="170dp">
+                                <LinearLayout
+                                    android:padding="2dp"
+                                    android:background="@drawable/bg_poster"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp">
+                                    <ImageView
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/baner04"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:weightSum="3"
+                                    android:layout_marginTop="5dp"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp">
+                                    <TextView
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@android:color/white"
+                                        android:text="MEMORIES MURDER"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp" />
+                                    <LinearLayout
+                                        android:layout_marginTop="2dp"
+                                        android:orientation="horizontal"
+                                        android:layout_weight="2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp">
+                                        <LinearLayout
+                                            android:paddingTop="1.5dp"
+                                            android:layout_weight="1"
+                                            android:orientation="horizontal"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent">
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_nonstar"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:gravity="right|top"
+                                            android:textSize="10dp"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/white"
+                                            android:text="8.0/10"
+                                            android:layout_weight="1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:background="@android:color/black"
+                                android:layout_width="200dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_height="170dp">
+                                <LinearLayout
+                                    android:padding="2dp"
+                                    android:background="@drawable/bg_poster"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp">
+                                    <ImageView
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/baner01"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:weightSum="3"
+                                    android:layout_marginTop="5dp"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp">
+                                    <TextView
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@android:color/white"
+                                        android:text="MEMORIES MURDER"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp" />
+                                    <LinearLayout
+                                        android:layout_marginTop="2dp"
+                                        android:orientation="horizontal"
+                                        android:layout_weight="2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp">
+                                        <LinearLayout
+                                            android:paddingTop="1.5dp"
+                                            android:layout_weight="1"
+                                            android:orientation="horizontal"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent">
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_nonstar"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:gravity="right|top"
+                                            android:textSize="10dp"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/white"
+                                            android:text="8.0/10"
+                                            android:layout_weight="1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:background="@android:color/black"
+                                android:layout_width="200dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_height="170dp">
+                                <LinearLayout
+                                    android:padding="2dp"
+                                    android:background="@drawable/bg_poster"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="130dp">
+                                    <ImageView
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/baner03"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:weightSum="3"
+                                    android:layout_marginTop="5dp"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp">
+                                    <TextView
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@android:color/white"
+                                        android:text="MEMORIES MURDER"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp" />
+                                    <LinearLayout
+                                        android:layout_marginTop="2dp"
+                                        android:orientation="horizontal"
+                                        android:layout_weight="2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp">
+                                        <LinearLayout
+                                            android:paddingTop="1.5dp"
+                                            android:layout_weight="1"
+                                            android:orientation="horizontal"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent">
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_star"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                            <ImageView
+                                                android:src="@drawable/icon_nonstar"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp" />
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:gravity="right|top"
+                                            android:textSize="10dp"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/white"
+                                            android:text="8.0/10"
+                                            android:layout_weight="1"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
                         </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_poster"
-                            android:padding="1dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/posteri4" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_poster"
-                            android:padding="1dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/posteru4" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="15dp"
-                            android:layout_marginTop="5dp"
-                            android:text="Read more"
-                            android:textColor="@color/colorYellow"
-                            android:textStyle="italic" />
-                    </RelativeLayout>
+                //Category
+                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:weightSum="10"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="23dp">
+                    <ImageView
+                        android:layout_gravity="left"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/imgcategory"
+                        android:layout_weight="0.9"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:typeface="serif"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorYellow"
+                        android:text="Genres of Movie"
+                        android:layout_weight="9"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Martial arts"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Mockumentary"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Documentary"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="7dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Adventure"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Horror"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Romance"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Comedy "
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Animation"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Disaster"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Superhero"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_marginRight="7dp"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:text="Action"
+                        android:background="@drawable/bg_tabbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

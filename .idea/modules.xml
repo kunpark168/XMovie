@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/XMovie.iml" filepath="$PROJECT_DIR$/XMovie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GTNM.iml" filepath="$PROJECT_DIR$/GTNM.iml" />
+      <module fileurl="file://D:\Final Project\GTNM\XMovie.iml" filepath="D:\Final Project\GTNM\XMovie.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

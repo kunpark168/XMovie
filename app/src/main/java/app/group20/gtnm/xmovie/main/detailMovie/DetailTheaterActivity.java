@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,9 +24,11 @@ public class DetailTheaterActivity extends AppCompatActivity{
     private ArrayList<Actor> arrActor;
     private DrawerLayout drawer;
     private ActorAdapter adapter;
+    private TextView txtCountHeart;
     private RecyclerView.LayoutManager layoutManager;
     private ImageView imgShare, imgSlideMenu_Theater;
     private TextView imgPlaytrailer;
+    private boolean flagFavorite = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,14 +49,17 @@ public class DetailTheaterActivity extends AppCompatActivity{
         imgShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent share = new Intent(android.content.Intent.ACTION_SEND);
-                share.setType("text/plain");
-                share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-                // Add data to the intent, the receiving app will decide
-                // what to do with it.
-                share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
-                share.putExtra(Intent.EXTRA_TEXT, "http://www.phimmoi.net/phim/nam-anh-em-sieu-nhan-4322/");
-                startActivity(Intent.createChooser(share, "Share This Movie"));
+                if (!flagFavorite){
+                    flagFavorite = true;
+                    imgShare.setImageResource(R.drawable.ic_heart);
+                    txtCountHeart.setText("125");
+                    Toast.makeText(DetailTheaterActivity.this, "Liked", Toast.LENGTH_SHORT).show();
+                }else {
+                    flagFavorite = false;
+                    imgShare.setImageResource(R.drawable.ic_nonheart);
+                    txtCountHeart.setText("124");
+                    Toast.makeText(DetailTheaterActivity.this, "UnLiked", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         imgSlideMenu_Theater.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +75,7 @@ public class DetailTheaterActivity extends AppCompatActivity{
     }
 
     private void addControls() {
+        txtCountHeart = (TextView) findViewById(R.id.txtCountHeartIntheater);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout_theater);
         imgSlideMenu_Theater = (ImageView) findViewById(R.id.imgSlideMenu_Theater);
         imgShare = (ImageView) findViewById(R.id.imgShareTheater);

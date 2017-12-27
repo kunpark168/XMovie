@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 
@@ -25,8 +26,9 @@ public class DetailPopularActivity extends AppCompatActivity {
     private DrawerLayout drawer;
     private ActorAdapter adapter;
     private ImageView imgShare, imgSlideMenu_Popular;
-    private TextView imgPlaytrailer;
+    private TextView imgPlaytrailer, txtCountHeart;
     private RecyclerView.LayoutManager layoutManager;
+    private boolean flagFavorite = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,16 +41,17 @@ public class DetailPopularActivity extends AppCompatActivity {
         imgShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent share = new Intent(android.content.Intent.ACTION_SEND);
-                share.setType("text/plain");
-                share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-
-                // Add data to the intent, the receiving app will decide
-                // what to do with it.
-                share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
-                share.putExtra(Intent.EXTRA_TEXT, "http://www.phimmoi.net/phim/chien-binh-long-den-xanh-5463/");
-
-                startActivity(Intent.createChooser(share, "Share This Movie"));
+                if (!flagFavorite){
+                    flagFavorite = true;
+                    imgShare.setImageResource(R.drawable.ic_heart);
+                    txtCountHeart.setText("125");
+                    Toast.makeText(DetailPopularActivity.this, "Liked", Toast.LENGTH_SHORT).show();
+                }else {
+                    flagFavorite = false;
+                    imgShare.setImageResource(R.drawable.ic_nonheart);
+                    txtCountHeart.setText("124");
+                    Toast.makeText(DetailPopularActivity.this, "Unliked", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         imgPlaytrailer.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +75,7 @@ public class DetailPopularActivity extends AppCompatActivity {
     }
 
     private void addControls() {
+        txtCountHeart = (TextView) findViewById(R.id.txtCountHeart);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout_popular);
         imgSlideMenu_Popular = (ImageView) findViewById(R.id.imgSlideMenu_Popular);
         imgShare = (ImageView) findViewById(R.id.imgSharePopular);
