@@ -2,6 +2,7 @@ package app.group20.gtnm.xmovie.main.detailMovie;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +15,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.andexert.library.RippleView;
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 
 import java.util.ArrayList;
 
 import app.group20.gtnm.xmovie.R;
+import app.group20.gtnm.xmovie.main.aboutUs.AboutUsActivity;
 import app.group20.gtnm.xmovie.main.favorite_movie.FavoriteMovieActivity;
+import app.group20.gtnm.xmovie.main.main.MainActivity;
 import app.group20.gtnm.xmovie.main.notification.NotificationActivity;
 import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout;
 
@@ -31,7 +35,8 @@ public class DetailPopularActivity extends AppCompatActivity {
     private ActorAdapter adapter;
     private ImageView imgShare, imgSlideMenu_Popular, imgBackMenu;
     private TextView imgPlaytrailer, txtCountHeart, txtBackMenu;
-    private LinearLayout layoutFavoriteMovie, layoutNotification;
+    private LinearLayout layoutFavoriteMovie, layoutNotification, layoutShare, layoutHome, layoutAboutUs;
+    private RippleView  rippleFavorite, rippleNotification, rippleShare, rippleHome, rippleAboutUs;
     private RecyclerView.LayoutManager layoutManager;
     private boolean flagFavorite = false;
     @Override
@@ -43,6 +48,96 @@ public class DetailPopularActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+
+        //About Us
+        layoutAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(DetailPopularActivity.this, AboutUsActivity.class));
+                    }
+                }, 500);
+            }
+        });
+        rippleAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        //Home
+        layoutHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(DetailPopularActivity.this, MainActivity.class));
+                    }
+                }, 500);
+            }
+        });
+        rippleHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        //Share
+        layoutShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(Intent.ACTION_SEND);
+                        i.setType("text/plain");
+                        i.putExtra(Intent.EXTRA_SUBJECT, "Sharing URL");
+                        i.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=apps.movie");
+                        startActivity(Intent.createChooser(i, "Share URL"));
+                    }
+                }, 500);
+
+            }
+        });
+        //Favorite
+        layoutFavoriteMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(DetailPopularActivity.this, FavoriteMovieActivity.class));
+                    }
+                }, 500);
+            }
+        });
+        rippleFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        //Notification
+        layoutNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(DetailPopularActivity.this, NotificationActivity.class));
+                    }
+                }, 500);
+            }
+        });
+        rippleNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         txtBackMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,18 +151,6 @@ public class DetailPopularActivity extends AppCompatActivity {
             }
         });
 
-        layoutFavoriteMovie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DetailPopularActivity.this, FavoriteMovieActivity.class));
-            }
-        });
-        layoutNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DetailPopularActivity.this, NotificationActivity.class));
-            }
-        });
         imgShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,8 +190,23 @@ public class DetailPopularActivity extends AppCompatActivity {
     private void addControls() {
         txtBackMenu = findViewById(R.id.txtBackSlideMenuPopular);
         imgBackMenu = findViewById(R.id.imgBackSlideMenuPopular);
+        //Favorite
         layoutFavoriteMovie = (LinearLayout) findViewById(R.id.layoutFavoritePopular);
+        rippleFavorite = findViewById(R.id.ripplelayoutFavoritePopular);
+        //Nottification
         layoutNotification = findViewById(R.id.layoutNotificationPopular);
+        rippleNotification = findViewById(R.id.ripplelayoutNotificationPopular);
+        //Share
+        layoutShare = findViewById(R.id.layoutSharePopular);
+        rippleShare = findViewById(R.id.ripplelayoutSharePopular);
+        //About Us
+        layoutAboutUs = findViewById(R.id.layoutAboutUsPopular);
+        rippleAboutUs = findViewById(R.id.ripplelayoutAboutUsPopular);
+        //Home
+        layoutHome = findViewById(R.id.layoutHomePopular);
+        rippleHome = findViewById(R.id.ripplelayoutHomePopular);
+
+
         txtCountHeart = (TextView) findViewById(R.id.txtCountHeartIntheater);
         txtCountHeart = (TextView) findViewById(R.id.txtCountHeart);
         drawer = (DuoDrawerLayout) findViewById(R.id.drawer_layout_popular);

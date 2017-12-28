@@ -1,12 +1,12 @@
-package app.group20.gtnm.xmovie.main;
+package app.group20.gtnm.xmovie.main.main;
 
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.os.Handler;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,10 +18,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.andexert.library.RippleView;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
 import app.group20.gtnm.xmovie.R;
+import app.group20.gtnm.xmovie.main.aboutUs.AboutUsActivity;
 import app.group20.gtnm.xmovie.main.favorite_movie.FavoriteMovieActivity;
 import app.group20.gtnm.xmovie.main.inTheater.InTheaterFragment;
 import app.group20.gtnm.xmovie.main.movielist.MorePopularMovieActivity;
@@ -32,7 +35,6 @@ import app.group20.gtnm.xmovie.main.popular.PopularFragment;
 import app.group20.gtnm.xmovie.main.search.SearchActivity;
 import app.group20.gtnm.xmovie.main.upComing.UpcomingFragment;
 import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout;
-import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -44,9 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int NUM_PAGES, currentPage;
     private TextView txtIntheaters, txtUpcoming, txtPopular, txtBackMenu;
     private FrameLayout layoutSearch;
-    private LinearLayout layoutFavoriteMovie, layoutNotification;
+    private LinearLayout layoutFavoriteMovie, layoutNotification, layoutShare, layoutAboutUs, layoutHome;
     private EditText edtSearchMain;
     private UpcomingFragment upcomingFragment;
+    private RippleView rippleShare, rippleFavorite, rippleAboutUs, rippleHome, rippleNotification;
     private int typeMovie = 1, arrPoster_landscape [] = {R.drawable.baner01, R.drawable.baner02, R.drawable.baner03, R.drawable.baner04, R.drawable.baner05};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,15 +76,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtMoreMovie.setOnClickListener(this);
         imgSilderMenu.setOnClickListener(this);
         layoutSearch.setOnClickListener(this);
+        //Favorite
         layoutFavoriteMovie.setOnClickListener(this);
+        rippleFavorite.setOnClickListener(this);
+        //Notification
         layoutNotification.setOnClickListener(this);
+        rippleNotification.setOnClickListener(this);
+        //Share
+        layoutShare.setOnClickListener(this);
+        rippleShare.setOnClickListener(this);
+        //Home
+        layoutHome.setOnClickListener(this);
+        rippleHome.setOnClickListener(this);
+        //About Us
+        layoutAboutUs.setOnClickListener(this);
+        rippleAboutUs.setOnClickListener(this);
     }
 
     private void addControls() {
         txtBackMenu = findViewById(R.id.txtBackSlideMenu);
         imgBackMenu = findViewById(R.id.imgBackSlideMenu);
+        //Favorite
         layoutFavoriteMovie = (LinearLayout) findViewById(R.id.layoutFavorite);
+        rippleFavorite = findViewById(R.id.ripplelayoutFavorite);
+        //Notification
         layoutNotification = findViewById(R.id.layoutNotification);
+        rippleNotification = findViewById(R.id.ripplelayoutNotification);
+        //Share
+        layoutShare = findViewById(R.id.layoutShare);
+        rippleShare = findViewById(R.id.ripplelayoutShare);
+        //Home
+        layoutHome = findViewById(R.id.layoutHome);
+        rippleHome = findViewById(R.id.ripplelayoutHome);
+        //About Us
+        layoutAboutUs = findViewById(R.id.layoutAboutus);
+        rippleAboutUs = findViewById(R.id.rippleAboutUs);
+
         edtSearchMain = (EditText) findViewById(R.id.edtSearchMain);
         drawer = (DuoDrawerLayout) findViewById(R.id.drawer_layout);
         imgSilderMenu = (ImageView) findViewById(R.id.imgSildemenu);
@@ -157,10 +187,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.layoutFavorite :
-                startActivity(new Intent(MainActivity.this, FavoriteMovieActivity.class));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(MainActivity.this, FavoriteMovieActivity.class));
+                    }
+                }, 500);
                 break;
             case R.id.layoutNotification :
-                startActivity(new Intent(MainActivity.this, NotificationActivity.class));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(MainActivity.this, NotificationActivity.class));
+                    }
+                }, 500);
+                break;
+            case R.id.layoutShare :
+                shareForUs ();
+                break;
+            case R.id.layoutHome :
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        drawer.closeDrawer(GravityCompat.START);
+                    }
+                }, 500);
+                break;
+            case R.id.layoutAboutus :
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
+                    }
+                }, 500);
                 break;
             case R.id.imgSildemenu :
                 if (!drawer.isDrawerOpen(GravityCompat.START)) {
@@ -181,6 +240,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             fragmentTransaction.commit();
         }
     }
+
+    private void shareForUs() {
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("text/plain");
+        i.putExtra(Intent.EXTRA_SUBJECT, "Sharing URL");
+        i.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=apps.movie");
+        startActivity(Intent.createChooser(i, "Share URL"));
+    }
+
     @Override
     public void onBackPressed() {
         DuoDrawerLayout drawer = (DuoDrawerLayout) findViewById(R.id.drawer_layout);

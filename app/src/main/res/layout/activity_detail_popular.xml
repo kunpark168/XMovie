@@ -86,128 +86,159 @@
                 android:layout_weight="0.4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp" />
-            //1
-            <LinearLayout
-                android:orientation="horizontal"
+            //1 Home
+            <com.andexert.library.RippleView
+                android:id="@+id/ripplelayoutHomePopular"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
-                <ImageView
-                    android:padding="17dp"
-                    android:src="@drawable/ic_home"
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/white"
-                    android:gravity="center_vertical"
-                    android:text="Home"
+                <LinearLayout
+                    android:id="@+id/layoutHomePopular"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            //1
-            <LinearLayout
-                android:id="@+id/layoutFavoritePopular"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-                <ImageView
-                    android:padding="17dp"
-                    android:src="@drawable/ic_nonheart_white"
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/white"
-                    android:gravity="center_vertical"
-                    android:text="Favorite Movie"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            //1
-            <LinearLayout
-                android:id="@+id/layoutNotificationPopular"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-                <FrameLayout
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="60dp"
                     android:layout_height="match_parent">
                     <ImageView
                         android:padding="17dp"
-                        android:src="@drawable/ic_earth_white"
+                        android:src="@drawable/ic_home"
+                        android:layout_marginLeft="20dp"
                         android:layout_width="60dp"
                         android:layout_height="match_parent" />
                     <TextView
                         android:textStyle="bold"
-                        android:gravity="center"
+                        android:textSize="15sp"
                         android:textColor="@android:color/white"
-                        android:text="3"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_gravity="right"
-                        android:background="@drawable/bg_notification_red"
-                        android:layout_width="17dp"
-                        android:layout_height="17dp" />
-                </FrameLayout>
-                <TextView
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/white"
-                    android:gravity="center_vertical"
-                    android:text="Notification"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            //1
-            <LinearLayout
+                        android:gravity="center_vertical"
+                        android:text="Home"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </com.andexert.library.RippleView>
+            //1 Favorite
+            <com.andexert.library.RippleView
+                android:id="@+id/ripplelayoutFavoritePopular"
                 android:orientation="horizontal"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
-                <ImageView
-                    android:padding="17dp"
-                    android:src="@drawable/ic_info"
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/white"
-                    android:gravity="center_vertical"
-                    android:text="About us"
+                <LinearLayout
+                    android:id="@+id/layoutFavoritePopular"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            //1
-            <LinearLayout
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:padding="17dp"
+                        android:src="@drawable/ic_nonheart_white"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:text="Favorite Movie"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </com.andexert.library.RippleView>
+            //1 Notification
+            <com.andexert.library.RippleView
+                android:id="@+id/ripplelayoutNotificationPopular"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <LinearLayout
+                    android:id="@+id/layoutNotificationPopular"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <FrameLayout
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:padding="17dp"
+                            android:src="@drawable/ic_earth_white"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent" />
+                        <TextView
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:text="3"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="right"
+                            android:background="@drawable/bg_notification_red"
+                            android:layout_width="17dp"
+                            android:layout_height="17dp" />
+                    </FrameLayout>
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:text="Notification"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </com.andexert.library.RippleView>
+            //1 About Us
+            <com.andexert.library.RippleView
+                android:id="@+id/ripplelayoutAboutUsPopular"
                 android:orientation="horizontal"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
-                <ImageView
-                    android:padding="18dp"
-                    android:src="@drawable/ic_share"
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/white"
-                    android:gravity="center_vertical"
-                    android:text="Share with us"
+                <LinearLayout
+                    android:id="@+id/layoutAboutUsPopular"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:padding="17dp"
+                        android:src="@drawable/ic_info"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:text="About us"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </com.andexert.library.RippleView>
+            //1 Share
+            <com.andexert.library.RippleView
+                android:id="@+id/ripplelayoutSharePopular"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <LinearLayout
+                    android:id="@+id/layoutSharePopular"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:padding="18dp"
+                        android:src="@drawable/ic_share"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:textColor="@android:color/white"
+                        android:gravity="center_vertical"
+                        android:text="Share with us"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </com.andexert.library.RippleView>
 
         </LinearLayout>
     </nl.psdcompany.duonavigationdrawer.views.DuoMenuView>

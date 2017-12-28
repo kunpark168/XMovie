@@ -1,4 +1,4 @@
-package app.group20.gtnm.xmovie.main;
+package app.group20.gtnm.xmovie.main.main;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
