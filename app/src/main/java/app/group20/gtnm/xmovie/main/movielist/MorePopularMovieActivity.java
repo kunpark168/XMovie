@@ -4,15 +4,19 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import app.group20.gtnm.xmovie.R;
 import app.group20.gtnm.xmovie.main.detailMovie.DetailPopularActivity;
+import app.group20.gtnm.xmovie.main.search.SearchActivity;
 
 public class MorePopularMovieActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView imgPostermp1, imgPostermp2, imgPostermp3, imgPostermp4, imgPostermp5, imgPostermp6, imgPostermp7, imgPostermp8, imgPostermp9 , imgPostermp10,
-                      imgPostermp11, imgPostermp12, imgPostermp13, imgPostermp14, imgPostermp15;
+                      imgPostermp11, imgPostermp12, imgPostermp13, imgPostermp14, imgPostermp15, imgBack;
+    private EditText edtSearchPopular;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +25,10 @@ public class MorePopularMovieActivity extends AppCompatActivity implements View.
     }
 
     private void addControls() {
+        imgBack = findViewById(R.id.imgBackMorePopular);
+        edtSearchPopular = findViewById(R.id.edtSearchPopular);
+        imgBack.setOnClickListener(this);
+        edtSearchPopular.setOnClickListener(this);
         imgPostermp1 = (ImageView) findViewById(R.id.imgPostermp1);
         imgPostermp2 = (ImageView) findViewById(R.id.imgPostermp2);
         imgPostermp3 = (ImageView) findViewById(R.id.imgPostermp3);
@@ -64,6 +72,12 @@ public class MorePopularMovieActivity extends AppCompatActivity implements View.
                 id == R.id.imgPostermp13 || id == R.id.imgPostermp14 || id == R.id.imgPostermp15 ){
             Intent intent = new Intent(this, DetailPopularActivity.class);
             startActivity(intent);
+        }
+        if (id == R.id.edtSearchTheater){
+            startActivity(new Intent(MorePopularMovieActivity.this, SearchActivity.class));
+        }
+        if (id == R.id.imgBackMorePopular){
+            finish();
         }
     }
 }

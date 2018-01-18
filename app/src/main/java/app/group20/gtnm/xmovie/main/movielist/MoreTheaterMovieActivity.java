@@ -4,16 +4,20 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import app.group20.gtnm.xmovie.R;
 import app.group20.gtnm.xmovie.main.detailMovie.DetailPopularActivity;
 import app.group20.gtnm.xmovie.main.detailMovie.DetailTheaterActivity;
+import app.group20.gtnm.xmovie.main.search.SearchActivity;
 
 public class MoreTheaterMovieActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ImageView imgPostermp1, imgPostermp2, imgPostermp3, imgPostermp4, imgPostermp5, imgPostermp6, imgPostermp7, imgPostermp8, imgPostermp9 , imgPostermp10,
-            imgPostermp11, imgPostermp12, imgPostermp13, imgPostermp14, imgPostermp15;
+            imgPostermp11, imgPostermp12, imgPostermp13, imgPostermp14, imgPostermp15, imgBack;
+    private EditText edtSearchTheater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,10 @@ public class MoreTheaterMovieActivity extends AppCompatActivity implements View.
         addControls ();
     }
     private void addControls() {
+        imgBack = findViewById(R.id.imgBackMoreTheater);
+        edtSearchTheater = findViewById(R.id.edtSearchTheater);
+        imgBack.setOnClickListener(this);
+        edtSearchTheater.setOnClickListener(this);
         imgPostermp1 = (ImageView) findViewById(R.id.imgPostermi1);
         imgPostermp2 = (ImageView) findViewById(R.id.imgPostermi2);
         imgPostermp3 = (ImageView) findViewById(R.id.imgPostermi3);
@@ -65,6 +73,12 @@ public class MoreTheaterMovieActivity extends AppCompatActivity implements View.
                 id == R.id.imgPostermi13 || id == R.id.imgPostermi14 || id == R.id.imgPostermi15 ){
             Intent intent = new Intent(this, DetailTheaterActivity.class);
             startActivity(intent);
+        }
+        if (id == R.id.edtSearchTheater){
+            startActivity(new Intent(MoreTheaterMovieActivity.this, SearchActivity.class));
+        }
+        if (id == R.id.imgBackMoreTheater){
+            finish();
         }
     }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
+    tools:context="app.group20.gtnm.xmovie.main.splash.SplashActivity">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp" />
+    <ProgressBar
+        android:theme="@style/ProgressTheme"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+</FrameLayout>

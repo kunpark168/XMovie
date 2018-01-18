@@ -9,44 +9,59 @@
     android:orientation="vertical"
     android:weightSum="10"
     tools:context="app.group20.gtnm.xmovie.main.movielist.MoreUpcomingMovie">
+    //SearchBox 1
+
     <LinearLayout
-        android:background="@drawable/bg_tabbar"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="44dp">
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp">
+
         <LinearLayout
-            android:weightSum="10"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
             <ImageView
-                android:padding="6dp"
-                android:layout_marginLeft="5dp"
-                android:src="@drawable/imgsidemenu"
-                android:layout_weight="1"
+                android:id="@+id/imgBackMoreUpcoming"
                 android:layout_width="0dp"
-                android:layout_height="match_parent" />
-            <EditText
-                android:focusable="false"
-                android:textSize="15sp"
-                android:gravity="center_vertical"
-                android:textColor="@color/colorYellow"
-                android:textColorHint="@color/colorYellow"
-                android:hint="Search"
-                android:paddingLeft="10dp"
-                android:background="@null"
-                android:layout_weight="8"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.55"
+                android:paddingBottom="5dp"
+                android:paddingTop="15dp"
+                android:src="@drawable/ic_back_white" />
+
+            <FrameLayout
+                android:id="@+id/layoutSearchUpcoming"
                 android:layout_width="0dp"
-                android:layout_height="match_parent" />
-            <ImageView
-                android:padding="6dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
                 android:layout_marginRight="5dp"
-                android:src="@drawable/imgsearch"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent" />
+                android:layout_weight="9.45">
+
+                <EditText
+                    android:id="@+id/edtSearchUpcoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="#bcbcbc"
+                    android:focusable="false"
+                    android:gravity="center_vertical"
+                    android:hint="Search"
+                    android:paddingLeft="10dp"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#bcbcbc"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:focusable="false"
+                    android:paddingBottom="13dp"
+                    android:paddingTop="15dp"
+                    android:src="@drawable/ic_search_white" />
+            </FrameLayout>
         </LinearLayout>
     </LinearLayout>
     //Movie list

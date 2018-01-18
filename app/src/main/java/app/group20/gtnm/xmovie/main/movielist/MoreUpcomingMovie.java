@@ -4,15 +4,19 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import app.group20.gtnm.xmovie.R;
 import app.group20.gtnm.xmovie.main.detailMovie.DetailPopularActivity;
 import app.group20.gtnm.xmovie.main.detailMovie.DetailUpcomingActivity;
+import app.group20.gtnm.xmovie.main.search.SearchActivity;
 
 public class MoreUpcomingMovie extends AppCompatActivity implements View.OnClickListener {
     private ImageView imgPostermp1, imgPostermp2, imgPostermp3, imgPostermp4, imgPostermp5, imgPostermp6, imgPostermp7, imgPostermp8, imgPostermp9 , imgPostermp10,
-            imgPostermp11, imgPostermp12, imgPostermp13, imgPostermp14, imgPostermp15;
+            imgPostermp11, imgPostermp12, imgPostermp13, imgPostermp14, imgPostermp15, imgBack;
+    private EditText edtSearchUpcoming;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,10 @@ public class MoreUpcomingMovie extends AppCompatActivity implements View.OnClick
         addControls ();
     }
     private void addControls() {
+        imgBack = findViewById(R.id.imgBackMoreUpcoming);
+        edtSearchUpcoming = findViewById(R.id.edtSearchUpcoming);
+        edtSearchUpcoming.setOnClickListener(this);
+        imgBack.setOnClickListener(this);
         imgPostermp1 = (ImageView) findViewById(R.id.imgPostermu1);
         imgPostermp2 = (ImageView) findViewById(R.id.imgPostermu2);
         imgPostermp3 = (ImageView) findViewById(R.id.imgPostermu3);
@@ -63,6 +71,12 @@ public class MoreUpcomingMovie extends AppCompatActivity implements View.OnClick
                 id == R.id.imgPostermu13 || id == R.id.imgPostermu14 || id == R.id.imgPostermu15 ){
             Intent intent = new Intent(this, DetailUpcomingActivity.class);
             startActivity(intent);
+        }
+        if (id == R.id.edtSearchUpcoming){
+            startActivity(new Intent(MoreUpcomingMovie.this, SearchActivity.class));
+        }
+        if (id == R.id.imgBackMoreUpcoming){
+            finish();
         }
     }
 }

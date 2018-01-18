@@ -11,6 +11,16 @@
         <item name="android:statusBarColor">#6b6400</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+    <style name="ProgressTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">#01000000</item>
+        <item name="colorAccent">#fff700</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">#6b6400</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 
 
     <style name="DialogPink" parent="Theme.AppCompat.Light.Dialog.Alert">
